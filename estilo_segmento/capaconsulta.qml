@@ -119,7 +119,10 @@
     <default expression="" field="radio" applyOnUpdate="0"/>
     <default expression="" field="segmento" applyOnUpdate="0"/>
     <default expression="" field="seg" applyOnUpdate="0"/>
-    <default expression="" field="descripcion" applyOnUpdate="0"/>
+    // Expresión por defecto de visualización de la descripción: se agrega el '\n' || replace("descripcion",'. ', '\n')
+    <default expression="" field="descripcion" applyOnUpdate="'\n' || replace("descripcion",'. ', '\n')"/>
+      // FIN: Expresión por defecto de visualización de la descripción
+
   </defaults>
   <constraints>
     <constraint notnull_strength="1" unique_strength="1" field="link" exp_strength="0" constraints="3"/>
@@ -190,26 +193,35 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
   <editable>
-    <field name="codloc" editable="1"/>
-    <field name="depto" editable="1"/>
+
+  // Se quitan los campos que no se quieren mostrar: Solo dejamos 'descripción', 'seg' y agregamos 'vivienda' que no estaba
+    // <field name="codloc" editable="1"/>
+    // <field name="depto" editable="1"/>
     <field name="descripcion" editable="1"/>
-    <field name="frac" editable="1"/>
-    <field name="link" editable="1"/>
-    <field name="prov" editable="1"/>
-    <field name="radio" editable="1"/>
+    // <field name="frac" editable="1"/>
+    // <field name="link" editable="1"/>
+    // <field name="prov" editable="1"/>
+    // <field name="radio" editable="1"/>
     <field name="seg" editable="1"/>
-    <field name="segmento" editable="1"/>
+    // <field name="segmento" editable="1"/>
+    <field name="vivienda" editable="1"/>
+    //Fin cambio
+
   </editable>
   <labelOnTop>
-    <field labelOnTop="0" name="codloc"/>
-    <field labelOnTop="0" name="depto"/>
+    // Se quitan los campos que no se quieren mostrar: Solo dejamos 'descripción', 'seg' y agregamos 'vivienda' que no estaba
+    // <field labelOnTop="0" name="codloc"/>
+    // <field labelOnTop="0" name="depto"/>
     <field labelOnTop="0" name="descripcion"/>
-    <field labelOnTop="0" name="frac"/>
-    <field labelOnTop="0" name="link"/>
-    <field labelOnTop="0" name="prov"/>
-    <field labelOnTop="0" name="radio"/>
+    // <field labelOnTop="0" name="frac"/>
+    // <field labelOnTop="0" name="link"/>
+    // <field labelOnTop="0" name="prov"/>
+    // <field labelOnTop="0" name="radio"/>
     <field labelOnTop="0" name="seg"/>
-    <field labelOnTop="0" name="segmento"/>
+    // <field labelOnTop="0" name="segmento"/>
+        <field labelOnTop="0" name="vivienda"/>
+    //Fin cambio
+    
   </labelOnTop>
   <widgets/>
   <previewExpression>"descripcion"</previewExpression>
