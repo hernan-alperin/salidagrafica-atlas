@@ -1,0 +1,78 @@
+Acá se muestran los pasos para poder genera un archivo que relacione los nombres de etiquetas de los segmentos con los colores que se les asignan: 
+
+1: Copiar código de segmento.qml a excel
+
+Ya en Excel:
+
+2: Seleccionamos la columna 1
+2.1: vamos a la solapa datos --> texto en columnas.
+2.2: Configuramos de la siguienta manera (  "Siguiente >" significa clikear en el botón siguiente ): 
+
+    Delimitados  
+        Siguiente >
+
+    marcar: Espacio      
+    desmarcar: Considerar separadores consecutivos como uno solo
+        Siguiente >
+
+3: Creamos una columna nueva al comienzo y la numerasmos ascendentemente para tener una ubicación de referencia de las celdas.
+
+4: vamos a solapa inicio --> formato condicionales --> reglas para resaltar celdas --> texto que contiene
+4.1: escribimos "name" y se van a colorear todas las celdas que contengan ese texto.
+        Identificar qué columna tiene texto que represente el nombre del segmento (ej: name="0"). En mi caso es la columna F
+
+5: Repetimos paso 3: 
+    Buscamos el texto "color". (Le podemos poner otro color de fondo en el formato condicional)
+    La columna con las etiquetas "color" es la E, y en la columna anterior (D) se muestran los valores RGBA de cada color.
+
+
+6: Ordenamos la columna E (la que tiene la etiqueta "color") por el color de celda que le dimos con el formato condicional para "color".
+    Van a quedar en la parte superior de la columna todas las celdas que contengan color.
+    Borramos las celdas inferiores en esta columna hasta el final del documento, así como los datos las celdas a la izquierda de estas (columna D)
+
+7: Ordenamos por la columna A numéricamente.
+
+8: Ordenamos por la columna F alfabteticamente.
+    borramos todos los "contenido" de las celdas que no tengan los valores que nos interesan como el siguiente: name="0" (no eliminar las celdas porque modificaría la posición de las celdas restantes en el documento)
+ 
+9: Idem punto 8 pero para la columna E.
+    Vamos a borrar los valores de las celdas que no tienen correlación con los valores RGBA de la columna D
+    También Borramos los valores de la columna D que no tengan valores RGBA
+ 
+10: Ordenamos por la columna A numéricamente.
+
+11: Eliminamos todas las columnas menos las D, E y F (Ahora pasan a ser A, B y C).
+
+12: Eliminamos las filas iniciales que no tienen información.
+
+13: Seleccionamos la columna C y apretamo F5 --> Especial --> Celdas en blanco --> aceptar
+    estando las celdas en blanco seleccionadas tipeamos =, apretamos la flecha para arriba y hacemos cntrl+Enter
+    Se van a escribir los valores de la celda superior.
+
+14: Seleccionamos nuevamente la columna C. Copiamos y pegamos como valor (pegado especial) en la misma columna.
+
+15: Seleccionamos las tres columnas y filtramos por la columna A.
+    Eliminamos todas las filas que no contengan valores de color
+
+16: Movemos la columna de names al inicio y la de valores RGBA al final.
+
+----------Ya tenemos los valores relacionados------------------------------------------------
+
+-----Para pasarlo a CSV y agregarle alertas a los valores duplicados -------------
+
+1: Seleccionamos la columna RGBA y reemplazamos las , por . (Solapa inicio --> buscar y seleccionar --> reemplazar --> reemplazar todos)
+
+2: Guardamos como CSV
+
+3: Cerramos el archivo y volvemos a abrirlo para visualizarlo como CSV
+
+4:  Seleccionamos la columna A.
+    Vamos a solapa inicio --> formato condicionales --> reglas para resaltar celdas --> Valores duplicados.
+    Ordenamos por color para que se junten todas las celdas con valores duplicados.
+    En las celdas siguientes a los valores duplicados agregar mensaje de alerta "Alerta: Valor duplicado"
+    Ordenar por columna A.
+
+5: Guardar nuevamente como CSV
+
+
+
