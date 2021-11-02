@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2021 a las 13:30:49
+-- Tiempo de generación: 02-11-2021 a las 18:48:01
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.12
 
@@ -18,27 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: 'segmentos_color'
+-- Base de datos: segmentos_color
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla 'segmentos_color'
+-- Estructura de tabla para la tabla segmentos_color
 --
 
-CREATE TABLE 'segmentos_color' (
-  'segmento' text NOT NULL,
-  'line_color' text NOT NULL,
-  'color' text NOT NULL,
-  'outile_color' text NOT NULL
+CREATE TABLE segmentos_color (
+  segmento text NOT NULL,
+  line_color text NOT NULL,
+  color text NOT NULL,
+  outile_color text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla 'segmentos_color'
+-- Volcado de datos para la tabla segmentos_color
 --
 
-INSERT INTO 'segmentos_color' ('segmento', 'line_color', 'color', 'outile_color') VALUES
+INSERT INTO segmentos_color (segmento, line_color, color, outile_color) VALUES
 ('0', '172,54,240,255', '172,54,240,255', '172,54,240,0'),
 ('1', '164,200,18,255', '164,200,18,255', '172,54,240,0'),
 ('2', '207,25,119,255', '207,25,119,255', '172,54,240,0'),
