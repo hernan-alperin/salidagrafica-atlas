@@ -98,67 +98,52 @@
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias index="0" field="link" name=""/>
-    <alias index="1" field="prov" name=""/>
-    <alias index="2" field="depto" name=""/>
-    <alias index="3" field="codloc" name=""/>
-    <alias index="4" field="frac" name=""/>
-    <alias index="5" field="radio" name=""/>
-    <alias index="6" field="segmento" name=""/>
     <alias index="7" field="seg" name=""/>
     <alias index="8" field="descripcion" name=""/>
+    <alias index="8" field="viviendas" name=""/>
+    <alias index="8" field="" name=""/>
+
+
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
   <defaults>
-    <default expression="" field="link" applyOnUpdate="0"/>
-    <default expression="" field="prov" applyOnUpdate="0"/>
-    <default expression="" field="depto" applyOnUpdate="0"/>
-    <default expression="" field="codloc" applyOnUpdate="0"/>
-    <default expression="" field="frac" applyOnUpdate="0"/>
-    <default expression="" field="radio" applyOnUpdate="0"/>
-    <default expression="" field="segmento" applyOnUpdate="0"/>
     <default expression="" field="seg" applyOnUpdate="0"/>
     <default expression="" field="descripcion" applyOnUpdate="0"/>
+    <default expression="" field="viviendas" applyOnUpdate="0"/>
+    <default expression="" field="" applyOnUpdate="0"/>
+
+
   </defaults>
   <constraints>
-    <constraint notnull_strength="1" unique_strength="1" field="link" exp_strength="0" constraints="3"/>
-    <constraint notnull_strength="0" unique_strength="0" field="prov" exp_strength="0" constraints="0"/>
-    <constraint notnull_strength="0" unique_strength="0" field="depto" exp_strength="0" constraints="0"/>
-    <constraint notnull_strength="0" unique_strength="0" field="codloc" exp_strength="0" constraints="0"/>
-    <constraint notnull_strength="0" unique_strength="0" field="frac" exp_strength="0" constraints="0"/>
-    <constraint notnull_strength="0" unique_strength="0" field="radio" exp_strength="0" constraints="0"/>
-    <constraint notnull_strength="0" unique_strength="0" field="segmento" exp_strength="0" constraints="0"/>
     <constraint notnull_strength="0" unique_strength="0" field="seg" exp_strength="0" constraints="0"/>
     <constraint notnull_strength="0" unique_strength="0" field="descripcion" exp_strength="0" constraints="0"/>
+    <constraint notnull_strength="0" unique_strength="0" field="viviendas" exp_strength="0" constraints="0"/>
+    <constraint notnull_strength="0" unique_strength="0" field="" exp_strength="0" constraints="0"/>
+
+
   </constraints>
   <constraintExpressions>
-    <constraint field="link" exp="" desc=""/>
-    <constraint field="prov" exp="" desc=""/>
-    <constraint field="depto" exp="" desc=""/>
-    <constraint field="codloc" exp="" desc=""/>
-    <constraint field="frac" exp="" desc=""/>
-    <constraint field="radio" exp="" desc=""/>
-    <constraint field="segmento" exp="" desc=""/>
     <constraint field="seg" exp="" desc=""/>
     <constraint field="descripcion" exp="" desc=""/>
+    <constraint field="viviendas" exp="" desc=""/>
+    <constraint field="" exp="" desc=""/>
+
+
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
   </attributeactions>
-  <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+  // Configuración para ordenar los registros
+  <attributetableconfig actionWidgetStyle="dropDown" sortOrder="seg" sortExpression="Ascendente">
     <columns>
-      <column name="link" hidden="0" width="-1" type="field"/>
-      <column name="prov" hidden="0" width="-1" type="field"/>
-      <column name="depto" hidden="0" width="-1" type="field"/>
-      <column name="codloc" hidden="0" width="-1" type="field"/>
-      <column name="frac" hidden="0" width="-1" type="field"/>
-      <column name="radio" hidden="0" width="-1" type="field"/>
-      <column name="segmento" hidden="0" width="-1" type="field"/>
-      <column name="seg" hidden="0" width="-1" type="field"/>
-      <column name="descripcion" hidden="0" width="-1" type="field"/>
-      <column hidden="1" width="-1" type="actions"/>
+    //Se agregaron los valores de width para cada campo
+      <column name="seg" hidden="0" width="16" type="field"/>
+      <column name="descripcion" hidden="0" width="219" type="field"/>
+      <column name="viviendas" hidden="0" width="13" type="field"/>
+      <column name="" hidden="0" width="40" type="field"/>
+
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -190,26 +175,26 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
   <editable>
-    <field name="codloc" editable="1"/>
-    <field name="depto" editable="1"/>
+  // Esta modificación reemplaza la operación del paso 12 del manual "https://github.com/Proyecto-Mandarina/salidagrafica-atlas/blob/master/salida-gr%C3%A1fica%20atlas%20instructivo.pdf"
+
+  // Se quitaron los campos que no se quieren mostrar: Solo dejamos 'descripción', 'seg' y agregamos 'vivienda' que no estaba y un campo vacío
     <field name="descripcion" editable="1"/>
-    <field name="frac" editable="1"/>
-    <field name="link" editable="1"/>
-    <field name="prov" editable="1"/>
-    <field name="radio" editable="1"/>
     <field name="seg" editable="1"/>
-    <field name="segmento" editable="1"/>
+    <field name="viviendas" editable="1"/>
+    <field name="" editable="1"/>
+
+    //Fin cambio
+
   </editable>
   <labelOnTop>
-    <field labelOnTop="0" name="codloc"/>
-    <field labelOnTop="0" name="depto"/>
+  // Se quitaron los campos que no se quieren mostrar: Solo dejamos 'descripción', 'seg' y agregamos 'vivienda' que no estaba y un campo vacío
     <field labelOnTop="0" name="descripcion"/>
-    <field labelOnTop="0" name="frac"/>
-    <field labelOnTop="0" name="link"/>
-    <field labelOnTop="0" name="prov"/>
-    <field labelOnTop="0" name="radio"/>
     <field labelOnTop="0" name="seg"/>
-    <field labelOnTop="0" name="segmento"/>
+    <field labelOnTop="0" name="viviendas"/>
+    <field labelOnTop="0" name=""/>
+
+    //Fin cambio
+
   </labelOnTop>
   <widgets/>
   <previewExpression>"descripcion"</previewExpression>
