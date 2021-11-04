@@ -32,7 +32,7 @@ CREATE TABLE segmentos_color (
   line_color text NOT NULL,
   color text NOT NULL,
   outile_color text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla segmentos_color
